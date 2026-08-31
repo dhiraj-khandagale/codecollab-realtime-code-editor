@@ -1,0 +1,355 @@
+/* Feature Page Styles */
+
+.feature-page-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f0f0f;
+  color: #e0e0e0;
+}
+
+/* Header Styles */
+.feature-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  flex-shrink: 0;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
+}
+
+.header-info h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header-info p {
+  font-size: 12px;
+  color: #888;
+  margin: 4px 0 0 0;
+}
+
+.settings-btn,
+.copy-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: #7c6ff7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.settings-btn:hover,
+.copy-link-btn:hover {
+  background: #6b5dd6;
+}
+
+/* Main Content */
+.feature-content {
+  display: flex;
+  flex: 1;
+  gap: 16px;
+  padding: 16px;
+  overflow: hidden;
+  background: #0f0f0f;
+}
+
+/* Editor Panel */
+.editor-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #16161d;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  gap: 12px;
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #888;
+  font-size: 13px;
+}
+
+.file-name-input {
+  background: transparent;
+  border: none;
+  color: #e0e0e0;
+  font-size: 13px;
+  font-family: monospace;
+  padding: 4px 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.file-name-input:focus {
+  background: #0f0f0f;
+  border: 1px solid #7c6ff7;
+}
+
+.language-select {
+  padding: 6px 12px;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.language-select:hover {
+  border-color: #3a3a3a;
+}
+
+.language-select:focus {
+  border-color: #7c6ff7;
+}
+
+.editor-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Assistant Panel Wrapper */
+.assistant-panel-wrapper {
+  width: 320px;
+  background: #16161d;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+/* Collaboration Panel Wrapper */
+.collaboration-panel-wrapper {
+  width: 340px;
+  background: #16161d;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+/* Interview Layout */
+.feature-content.interview-layout {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.problem-panel {
+  background: #16161d;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.problem-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  color: #34d399;
+}
+
+.problem-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.problem-content {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+.interview-editor {
+  flex: 2;
+}
+
+.interview-controls-wrapper {
+  width: 350px;
+  background: #16161d;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+/* Settings Sidebar */
+.settings-sidebar {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  width: 280px;
+  background: #1a1a1a;
+  border-left: 1px solid #2a2a2a;
+  padding: 20px;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+  box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.settings-sidebar h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.settings-group {
+  margin-bottom: 16px;
+}
+
+.settings-group label {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.settings-group select,
+.settings-group input {
+  width: 100%;
+  padding: 8px 12px;
+  background: #0f0f0f;
+  color: #e0e0e0;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+
+.settings-group select:focus,
+.settings-group input:focus {
+  border-color: #7c6ff7;
+}
+
+/* Scrollbar Styling */
+.assistant-panel-wrapper::-webkit-scrollbar,
+.collaboration-panel-wrapper::-webkit-scrollbar,
+.interview-controls-wrapper::-webkit-scrollbar,
+.problem-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.assistant-panel-wrapper::-webkit-scrollbar-track,
+.collaboration-panel-wrapper::-webkit-scrollbar-track,
+.interview-controls-wrapper::-webkit-scrollbar-track,
+.problem-panel::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+
+.assistant-panel-wrapper::-webkit-scrollbar-thumb,
+.collaboration-panel-wrapper::-webkit-scrollbar-thumb,
+.interview-controls-wrapper::-webkit-scrollbar-thumb,
+.problem-panel::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+
+.assistant-panel-wrapper::-webkit-scrollbar-thumb:hover,
+.collaboration-panel-wrapper::-webkit-scrollbar-thumb:hover,
+.interview-controls-wrapper::-webkit-scrollbar-thumb:hover,
+.problem-panel::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .assistant-panel-wrapper,
+  .collaboration-panel-wrapper,
+  .interview-controls-wrapper {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .feature-content {
+    flex-direction: column;
+  }
+
+  .assistant-panel-wrapper,
+  .collaboration-panel-wrapper,
+  .interview-controls-wrapper {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .editor-panel {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature-header {
+    flex-wrap: wrap;
+  }
+
+  .header-info h1 {
+    font-size: 16px;
+  }
+
+  .settings-sidebar {
+    right: auto;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    border-left: none;
+    border-top: 1px solid #2a2a2a;
+    max-height: 50vh;
+  }
+}

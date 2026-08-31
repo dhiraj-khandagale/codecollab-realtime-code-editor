@@ -1,0 +1,143 @@
+/* ── VS Code-style Menu Bar ── */
+
+.menubar {
+  display: flex;
+  align-items: center;
+  background: #1e1e1e;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 0 8px;
+  height: 30px;
+  flex-shrink: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 13px;
+  color: #ccc;
+  user-select: none;
+  position: relative;
+  z-index: 200;
+}
+
+/* ── Top-level menu items ── */
+
+.menubar-item {
+  position: relative;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.12s ease;
+}
+
+.menubar-item:hover,
+.menubar-item.active {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+/* ── Dropdown panel ── */
+
+.menubar-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #252526;
+  border: 1px solid #3c3c3c;
+  border-radius: 6px;
+  padding: 4px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 300;
+  animation: menuSlideIn 0.12s ease-out;
+}
+
+@keyframes menuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Dropdown rows ── */
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 24px 6px 12px;
+  cursor: pointer;
+  color: #ccc;
+  font-size: 13px;
+  transition: background 0.1s ease;
+  gap: 32px;
+}
+
+.menu-row:hover {
+  background: #094771;
+  color: #fff;
+}
+
+.menu-row.disabled {
+  color: #555;
+  cursor: default;
+}
+
+.menu-row.disabled:hover {
+  background: transparent;
+  color: #555;
+}
+
+.menu-row-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-row-icon {
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7c6ff7;
+  flex-shrink: 0;
+}
+
+.menu-row-shortcut {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.menu-row:hover .menu-row-shortcut {
+  color: #aaa;
+}
+
+/* ── Separator ── */
+
+.menu-separator {
+  height: 1px;
+  background: #3c3c3c;
+  margin: 4px 8px;
+}
+
+/* ── Submenu indicator ── */
+
+.menu-row-submenu {
+  font-size: 10px;
+  color: #666;
+  margin-left: auto;
+}
+
+.menu-row:hover .menu-row-submenu {
+  color: #aaa;
+}
+
+/* ── Backdrop overlay (invisible click-away catcher) ── */
+
+.menubar-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+}

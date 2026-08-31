@@ -1,0 +1,501 @@
+/* ── Footer Panel Container ── */
+
+.footer-panel {
+  display: flex;
+  flex-direction: column;
+  background: #1e1e1e;
+  border-top: 1px solid #2a2a2a;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0;
+}
+
+/* ── Resize Handle ── */
+
+.footer-panel-resize {
+  height: 4px;
+  background: transparent;
+  cursor: ns-resize;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  transition: background 0.15s ease;
+}
+
+.footer-panel-resize:hover,
+.footer-panel-resize.dragging {
+  background: #7c6ff7;
+}
+
+/* ── Tab Strip ── */
+
+.footer-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #252526;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 0 8px;
+  height: 35px;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.footer-panel-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+}
+
+.footer-panel-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 12px;
+  height: 100%;
+  font-size: 12px;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+
+.footer-panel-tab:hover {
+  color: #ccc;
+}
+
+.footer-panel-tab.active {
+  color: #fff;
+  border-bottom-color: #7c6ff7;
+}
+
+.footer-panel-tab-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 8px;
+  min-width: 16px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.footer-panel-tab-badge.error {
+  background: #f14c4c33;
+  color: #f14c4c;
+}
+
+.footer-panel-tab-badge.warn {
+  background: #cca70033;
+  color: #cca700;
+}
+
+.footer-panel-tab-badge.info {
+  background: #3794ff33;
+  color: #3794ff;
+}
+
+/* ── Header Actions ── */
+
+.footer-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footer-panel-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  border: none;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.footer-panel-action-btn:hover {
+  background: #3c3c3c;
+  color: #fff;
+}
+
+/* ── Panel Content ── */
+
+.footer-panel-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Terminal ── */
+
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f0f0f;
+  font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', Consolas, monospace;
+  font-size: 13px;
+}
+
+.terminal-output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.terminal-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+.terminal-line {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.terminal-line.command {
+  color: #dcdcaa;
+}
+
+.terminal-line.output {
+  color: #9cdcfe;
+}
+
+.terminal-line.error {
+  color: #f14c4c;
+}
+
+.terminal-line.success {
+  color: #4ec9b0;
+}
+
+.terminal-line.info {
+  color: #888;
+}
+
+.terminal-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 8px 16px;
+  border-top: 1px solid #1e1e1e;
+  background: #0a0a0a;
+}
+
+.terminal-prompt-symbol {
+  color: #7c6ff7;
+  font-weight: 700;
+  margin-right: 8px;
+  font-size: 13px;
+}
+
+.terminal-prompt-path {
+  color: #4ec9b0;
+  margin-right: 8px;
+  font-size: 12px;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  caret-color: #7c6ff7;
+}
+
+/* ── Problems Panel ── */
+
+.problems-container {
+  height: 100%;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.problems-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.problems-container::-webkit-scrollbar-thumb {
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+.problems-group {
+  margin-bottom: 4px;
+}
+
+.problems-group-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 16px;
+  font-size: 12px;
+  color: #ccc;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.problems-group-header:hover {
+  background: #2a2d2e;
+}
+
+.problem-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 16px 4px 36px;
+  font-size: 12px;
+  color: #bbb;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.problem-row:hover {
+  background: #2a2d2e;
+}
+
+.problem-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.problem-icon.error {
+  color: #f14c4c;
+}
+
+.problem-icon.warning {
+  color: #cca700;
+}
+
+.problem-icon.info {
+  color: #3794ff;
+}
+
+.problem-message {
+  flex: 1;
+}
+
+.problem-source {
+  color: #666;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.problem-row.selected {
+  background: #2e2d42;
+}
+
+.problem-explanation {
+  margin: 12px 16px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #121216;
+  border: 1px solid #2a2d2e;
+  color: #d1d5db;
+  font-size: 12px;
+}
+
+.problem-explanation-title {
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ── Output Panel ── */
+
+.output-container {
+  height: 100%;
+  overflow-y: auto;
+  padding: 12px 16px;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 12px;
+  color: #9cdcfe;
+  line-height: 1.7;
+  background: #0f0f0f;
+}
+
+.output-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.output-container::-webkit-scrollbar-thumb {
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+.output-line {
+  white-space: pre-wrap;
+}
+
+.output-line .timestamp {
+  color: #555;
+  margin-right: 8px;
+}
+
+.output-line.error {
+  color: #f14c4c;
+}
+
+.output-line.warn {
+  color: #cca700;
+}
+
+/* ── Debug Console ── */
+
+.debug-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0f0f0f;
+  font-family: 'Fira Code', 'Cascadia Code', Consolas, monospace;
+  font-size: 13px;
+}
+
+.debug-output {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.debug-output::-webkit-scrollbar {
+  width: 8px;
+}
+
+.debug-output::-webkit-scrollbar-thumb {
+  background: #3c3c3c;
+  border-radius: 4px;
+}
+
+.debug-line {
+  white-space: pre-wrap;
+}
+
+.debug-line.log {
+  color: #9cdcfe;
+}
+
+.debug-line.warn {
+  color: #cca700;
+}
+
+.debug-line.error {
+  color: #f14c4c;
+}
+
+.debug-line.result {
+  color: #4ec9b0;
+}
+
+.debug-prompt {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-top: 1px solid #1e1e1e;
+  background: #0a0a0a;
+}
+
+.debug-prompt-icon {
+  color: #cca700;
+  margin-right: 8px;
+  font-size: 13px;
+}
+
+.debug-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  caret-color: #cca700;
+}
+
+/* ── Empty State ── */
+
+.panel-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #555;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Status Bar ── */
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  background: #007acc;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #fff;
+  flex-shrink: 0;
+  user-select: none;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.status-bar-left,
+.status-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  height: 100%;
+}
+
+.status-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 100%;
+  cursor: pointer;
+  transition: background 0.12s ease;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.status-bar-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.status-bar-item .icon {
+  display: flex;
+  align-items: center;
+}
+
+.status-bar-separator {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 2px;
+}
