@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react' // State for registration form
 import { useNavigate, Link } from 'react-router-dom' // Routing helpers
 import { useAuth } from '../context/AuthContext' // Auth context hook
@@ -18,6 +19,28 @@ export default function RegisterPage() {
     login(email, password) // Log in demo user
     toast.success('Account created!') // Success feedback
     navigate('/dashboard') // Redirect to dashboard
+=======
+import { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
+import { Code2 } from 'lucide-react'
+import toast from 'react-hot-toast'
+
+export default function RegisterPage() {
+  const [name, setName]         = useState('')
+  const [email, setEmail]       = useState('')
+  const [password, setPassword] = useState('')
+  const { login } = useAuth()
+  const navigate  = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!name || !email || !password) { toast.error('Fill in all fields'); return }
+    if (password.length < 6) { toast.error('Password must be 6+ characters'); return }
+    login(email, password)
+    toast.success('Account created!')
+    navigate('/dashboard')
+>>>>>>> origin/main
   }
 
   return (
@@ -30,7 +53,11 @@ export default function RegisterPage() {
         borderRadius: 16, padding: 40, width: '100%', maxWidth: 420
       }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
+<<<<<<< HEAD
           <Code2 size={32} color="#7c6ff7" /> {/* Page icon */}
+=======
+          <Code2 size={32} color="#7c6ff7" />
+>>>>>>> origin/main
           <h1 style={{ fontSize: 24, fontWeight: 700, marginTop: 12 }}>Create account</h1>
           <p style={{ color: '#666', fontSize: 14, marginTop: 6 }}>Join CodeCollab today</p>
         </div>
@@ -68,4 +95,8 @@ export default function RegisterPage() {
       </div>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

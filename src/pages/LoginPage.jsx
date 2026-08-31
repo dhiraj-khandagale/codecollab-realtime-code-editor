@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from 'react' // Local state for input fields
 import { useNavigate, Link } from 'react-router-dom' // Router helpers for navigation and links
 import { useAuth } from '../context/AuthContext' // Auth context access
@@ -16,6 +17,26 @@ export default function LoginPage() {
     const ok = login(email, password) // Perform login action
     if (ok) { toast.success('Welcome back!'); navigate('/dashboard') } // Navigate on success
     else toast.error('Invalid credentials') // Show error on failure
+=======
+import { useState } from 'react'
+import { useNavigate, Link } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
+import { Code2 } from 'lucide-react'
+import toast from 'react-hot-toast'
+
+export default function LoginPage() {
+  const [email, setEmail]       = useState('')
+  const [password, setPassword] = useState('')
+  const { login } = useAuth()
+  const navigate  = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (!email || !password) { toast.error('Fill in all fields'); return }
+    const ok = login(email, password)
+    if (ok) { toast.success('Welcome back!'); navigate('/dashboard') }
+    else toast.error('Invalid credentials')
+>>>>>>> origin/main
   }
 
   return (
@@ -28,7 +49,11 @@ export default function LoginPage() {
         borderRadius: 16, padding: 40, width: '100%', maxWidth: 420
       }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
+<<<<<<< HEAD
           <Code2 size={32} color="#7c6ff7" /> {/* Page icon */}
+=======
+          <Code2 size={32} color="#7c6ff7" />
+>>>>>>> origin/main
           <h1 style={{ fontSize: 24, fontWeight: 700, marginTop: 12 }}>Welcome back</h1>
           <p style={{ color: '#666', fontSize: 14, marginTop: 6 }}>Sign in to your account</p>
         </div>
@@ -36,7 +61,11 @@ export default function LoginPage() {
         <form onSubmit={handleSubmit}>
           {[
             { label: 'Email', type: 'email', value: email, set: setEmail, placeholder: 'you@example.com' },
+<<<<<<< HEAD
             { label: 'Password', type: 'password', value: password, set: setPassword, placeholder: '????????' },
+=======
+            { label: 'Password', type: 'password', value: password, set: setPassword, placeholder: '••••••••' },
+>>>>>>> origin/main
           ].map(f => (
             <div key={f.label} style={{ marginBottom: 16 }}>
               <label style={{ fontSize: 13, color: '#aaa', display: 'block', marginBottom: 6 }}>{f.label}</label>
@@ -72,4 +101,8 @@ export default function LoginPage() {
       </div>
     </div>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main

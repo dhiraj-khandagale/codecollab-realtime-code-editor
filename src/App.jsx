@@ -9,9 +9,12 @@ import LoginPage     from './pages/LoginPage'
 import RegisterPage  from './pages/RegisterPage'
 import DashboardPage from './pages/DashboardPage'
 import ProjectPage   from './pages/ProjectPage'
+<<<<<<< HEAD
 import AIProgrammerPage from './pages/AIProgrammerPage'
 import CollaborationPage from './pages/CollaborationPage'
 import InterviewModePage from './pages/InterviewModePage'
+=======
+>>>>>>> origin/main
 
 export default function App() {
   return (
@@ -29,6 +32,7 @@ export default function App() {
             <Route path="/project/:projectId" element={
               <ProtectedRoute><ProjectPage /></ProtectedRoute>
             }/>
+<<<<<<< HEAD
             <Route path="/ai-programmer" element={
               <ProtectedRoute><AIProgrammerPage /></ProtectedRoute>
             }/>
@@ -38,6 +42,8 @@ export default function App() {
             <Route path="/interview" element={
               <ProtectedRoute><InterviewModePage /></ProtectedRoute>
             }/>
+=======
+>>>>>>> origin/main
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </BrowserRouter>
