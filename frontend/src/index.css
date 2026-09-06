@@ -1,6 +1,5 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<<<<<<< HEAD
 :root {
   color-scheme: dark;
   font-family: 'Inter', system-ui, sans-serif;
@@ -30,19 +29,8 @@ body.theme-dark {
   --muted-text: #999999;
   --surface-border: #222222;
   color-scheme: dark;
-=======
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: #0f0f0f;
-  color: #e0e0e0;
-  min-height: 100vh;
->>>>>>> origin/main
 }
 
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #1a1a1a; }
-<<<<<<< HEAD
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-=======
-::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
->>>>>>> origin/main
